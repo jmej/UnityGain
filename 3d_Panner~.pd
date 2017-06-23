@@ -71,14 +71,14 @@ normal @fontslant roman @fontsize 11 @receive (null) @send (null) @channels
 @interval 50 @decimal 6 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
 0.5 1 @textcolor 0 0 0 1;
 #X obj 1641 -93 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 10300 1;
 #X obj 1641 46 / 127;
 #X obj 1641 70 * 2;
 #X obj 1641 94 - 1;
 #X obj 1447 -10 *~;
 #X obj 1690 187 *~;
 #X obj 1170 -100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X text 1187 -99 On for LFO off for manual/midi control;
 #X obj 1170 -72 s \$0-elevationLFO;
 #X obj 1522 -61 r \$0-elevationLFO;
@@ -102,7 +102,7 @@ Azimuth and Elevation;
 #X msg 804 65 0;
 #X msg 835 65 1;
 #X obj 512 -102 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X text 529 -101 On for LFO off for manual/midi control;
 #X obj 512 -126 inlet;
 #X obj 363 -126 inlet~;
@@ -113,7 +113,7 @@ Azimuth and Elevation;
 @interval 50 @decimal 6 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
 0.5 1 @textcolor 0 0 0 1;
 #X obj 1004 -100 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 5500 1;
 #X obj 1004 39 / 127;
 #X obj 1004 63 * 2;
 #X obj 1004 87 - 1;
