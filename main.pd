@@ -1,23 +1,25 @@
 #N canvas 611 38 803 428 10;
-#X obj 212 261 3d_panner~, f 25;
-#X msg 24 102 \; pd dsp 1;
-#X msg 23 139 \; pd dsp 0;
-#X obj 236 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 229 379 3d_panner~, f 25;
+#X msg 41 220 \; pd dsp 1;
+#X msg 40 257 \; pd dsp 0;
+#X obj 253 204 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 127 125 Source;
-#X obj 136 151 hoa.soundrone;
-#X text 253 87 Toggles LFO (inside) or manual;
-#X text 305 160 rotates azimuth 0 - 360 deg;
-#X obj 513 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 147 155 hoa.soundrone;
+#X text 270 205 Toggles LFO (inside) or manual;
+#X text 322 278 rotates azimuth 0 - 360 deg;
+#X obj 530 205 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 512 111 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 529 229 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 5000 1;
-#X text 530 88 Toggles LFO (inside) or manual;
-#X text 532 160 elevation;
-#X obj 292 129 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X text 547 206 Toggles LFO (inside) or manual;
+#X text 549 278 elevation;
+#X obj 309 247 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 9600 1;
+#X text 138 129 connect any sound source instead of this drone;
+#X text 177 45 Example of 1 Spatialization Channel... copy/paste for
+more;
 #X connect 3 0 0 1;
-#X connect 5 0 0 0;
-#X connect 8 0 0 4;
-#X connect 9 0 0 6;
-#X connect 12 0 0 3;
+#X connect 4 0 0 0;
+#X connect 7 0 0 4;
+#X connect 8 0 0 6;
+#X connect 11 0 0 3;
