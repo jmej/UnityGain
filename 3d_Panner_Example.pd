@@ -1,0 +1,276 @@
+#N canvas 144 52 1453 922 10;
+#X msg 24 102 \; pd dsp 1;
+#X msg 23 139 \; pd dsp 0;
+#X text 181 460 2 - Decoding for a set of loudspeakers;
+#X obj 17 239 c.canvasinfos;
+#X obj 17 210 c.loadmess;
+#X text 138 191 1 - Encoding in the spherical harmonics domain;
+#X text 91 595 Representation of the contribution of 20 loudspeakers
+;
+#X obj 421 521 hoa.3d.meter~ @size 231 231 @fontname Helvetica @fontweight
+normal @fontslant roman @fontsize 11 @receive (null) @send (null) @channels
+20 @angles 180 69.0948 159.095 -0 90 20.9052 135 35.2644 135 -35.2644
+180 -69.0948 20.9052 -0 90 -20.9052 45 35.2644 45 -35.2644 0 69.0948
+200.905 -0 270 20.9052 225 35.2644 225 -35.2644 0 -69.0948 339.095
+-0 270 -20.9052 315 35.2644 315 -35.2644 @offset 0 0 0 @rotation anti-clockwise
+@view top @vectors none @interval 50 @bgcolor 0.76 0.76 0.76 1 @bdcolor
+0.7 0.7 0.7 1 @coldcolor 0 0.6 0 0.8 @tepidcolor 0.6 0.73 0 0.8 @warmcolor
+0.85 0.85 0 0.8 @hotcolor 1 0.6 0 0.8 @overcolor 1 0 0 0.8 @energycolor
+0 0 1 0.8 @velocitycolor 1 0 0 0.8;
+#X obj 419 190 hoa.3d.encoder~ 3 --------------------;
+#X obj 547 162 c.number~ @size 53 17 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@interval 50 @decimal 6 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
+0.5 1 @textcolor 0 0 0 1;
+#X obj 531 114 hoa.pi~ 2;
+#X text 557 134 azimuth;
+#X text 1441 239 elevation;
+#X obj 1432 -86 c.number @size 53 17 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@presetname "(null)" @min "(null)" @max "(null)" @minmax "(null)" "(null)"
+@decimal 6 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @textcolor
+0 0 0 1;
+#X obj 775 -77 c.number @size 53 17 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@presetname "(null)" @min "(null)" @max "(null)" @minmax "(null)" "(null)"
+@decimal 6 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @textcolor
+0 0 0 1;
+#X obj 1435 269 c.number~ @size 53 17 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@interval 50 @decimal 6 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
+0.5 1 @textcolor 0 0 0 1;
+#X obj 775 -51 phasor~ -0.5;
+#X text 555 145 (-π & π);
+#X text 1433 251 (-π/2 & π/2);
+#X obj 1421 221 hoa.pi~ 0.5;
+#X obj 1432 -60 hoa.tri~ 0.05;
+#X text 410 98 Source;
+#X obj 1423 420 c.meter~ @size 13 85 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@interval 50 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @coldcolor
+0 0.6 0 0.8 @tepidcolor 0.6 0.73 0 0.8 @warmcolor 0.85 0.85 0 0.8 @hotcolor
+1 0.6 0 0.8 @overcolor 1 0 0 0.8;
+#X obj 1423 375 hoa.3d.decoder~ 3 binaural -----------------;
+#X obj 1423 530 hoa.dac~ 1:2 -------------------------------;
+#X obj 1684 424 c.meter~ @size 13 85 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@interval 50 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @coldcolor
+0 0.6 0 0.8 @tepidcolor 0.6 0.73 0 0.8 @warmcolor 0.85 0.85 0 0.8 @hotcolor
+1 0.6 0 0.8 @overcolor 1 0 0 0.8;
+#X text 1443 401 Binaural mode is used for headphones.;
+#X obj 800 600 hoa.connect;
+#X obj 800 572 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 800 533 key;
+#X obj 800 552 sel 32;
+#X obj 419 124 hoa.soundrone;
+#X obj 1378 -30 c.number~ @size 53 17 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@interval 50 @decimal 6 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
+0.5 1 @textcolor 0 0 0 1;
+#X obj 1641 138 vline~;
+#X msg 1641 116 \$1 100;
+#X obj 1589 164 c.number~ @size 53 17 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@interval 50 @decimal 6 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
+0.5 1 @textcolor 0 0 0 1;
+#X obj 1641 -93 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6700 1;
+#X obj 1641 46 / 127;
+#X obj 1641 70 * 2;
+#X obj 1641 94 - 1;
+#X obj 1447 -10 *~;
+#X obj 1690 187 *~;
+#X obj 1170 -100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X text 1187 -99 On for LFO off for manual/midi control;
+#X obj 1170 -72 s \$0-elevationLFO;
+#X obj 1522 -61 r \$0-elevationLFO;
+#X obj 1522 -30 sel 0 1;
+#X msg 1522 0 0;
+#X msg 1560 1 1;
+#X obj 1705 83 r \$0-elevationLFO;
+#X msg 1705 144 0;
+#X msg 1734 143 1;
+#X obj 1705 114 sel 1 0;
+#X obj 1641 -118 inlet;
+#X text 1679 -118 manual elevation;
+#X text 1487 -89 elevation lfo speed;
+#X obj 1432 -128 inlet;
+#X text 27 -113 Jesse Mejia 2017 \, Portland Community College;
+#X text 21 -52 work in progress - allows manual and LFO control over
+Azimuth and Elevation;
+#X obj 1170 -124 inlet;
+#X obj 420 460 hoa.3d.decoder~ 3 ambisonics 20 ------;
+#X obj 805 23 sel 0 1;
+#X msg 804 65 0;
+#X msg 835 65 1;
+#X obj 512 -102 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X text 529 -101 On for LFO off for manual/midi control;
+#X obj 512 -126 inlet;
+#X obj 363 -126 inlet~;
+#X obj 1004 131 vline~;
+#X msg 1004 109 \$1 100;
+#X obj 952 157 c.number~ @size 53 17 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@interval 50 @decimal 6 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
+0.5 1 @textcolor 0 0 0 1;
+#X obj 1004 -100 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 11400 1;
+#X obj 1004 39 / 127;
+#X obj 1004 63 * 2;
+#X obj 1004 87 - 1;
+#X obj 1053 180 *~;
+#X msg 1068 137 0;
+#X msg 1097 136 1;
+#X obj 1068 107 sel 1 0;
+#X obj 1004 -125 inlet;
+#X text 28 -131 Unity Gain Spatization Channel, f 66;
+#X obj 775 -127 inlet;
+#X text 835 -78 azimuth lfo speed;
+#X obj 775 -3 *~;
+#X obj 805 -8 r \$0-azimuthLFO;
+#X obj 1068 76 r \$0-azimuthLFO;
+#X obj 512 -74 s \$0-azimuthLFO;
+#X text 1042 -125 manual azimuth;
+#X text 409 -125 audio input;
+#X obj 911 376 hoa.3d.scope~ @size 207 207 @fontname Helvetica @fontweight
+normal @fontslant roman @fontsize 11 @receive hoascope3d @send (null)
+@order 3 @gain 1 @interval 20 @bgcolor 0.76 0.76 0.76 1 @bdcolor 0.7
+0.7 0.7 1 @phcolor 1 0 2.38419e-07 1 @nhcolor 0 0.1 1 1;
+#X text 1027 -13 0 to 127 = 0 360 degrees;
+#X text 903 598 delete this object for better performance;
+#X connect 4 0 3 0;
+#X connect 8 0 23 0;
+#X connect 8 0 60 0;
+#X connect 8 0 89 0;
+#X connect 8 1 23 1;
+#X connect 8 1 60 1;
+#X connect 8 1 89 1;
+#X connect 8 2 23 2;
+#X connect 8 2 60 2;
+#X connect 8 2 89 2;
+#X connect 8 3 23 3;
+#X connect 8 3 60 3;
+#X connect 8 3 89 3;
+#X connect 8 4 23 4;
+#X connect 8 4 60 4;
+#X connect 8 4 89 4;
+#X connect 8 5 23 5;
+#X connect 8 5 60 5;
+#X connect 8 5 89 5;
+#X connect 8 6 23 6;
+#X connect 8 6 60 6;
+#X connect 8 6 89 6;
+#X connect 8 7 23 7;
+#X connect 8 7 60 7;
+#X connect 8 7 89 7;
+#X connect 8 8 23 8;
+#X connect 8 8 60 8;
+#X connect 8 8 89 8;
+#X connect 8 9 23 9;
+#X connect 8 9 60 9;
+#X connect 8 9 89 9;
+#X connect 8 10 23 10;
+#X connect 8 10 60 10;
+#X connect 8 10 89 10;
+#X connect 8 11 23 11;
+#X connect 8 11 60 11;
+#X connect 8 11 89 11;
+#X connect 8 12 23 12;
+#X connect 8 12 60 12;
+#X connect 8 12 89 12;
+#X connect 8 13 23 13;
+#X connect 8 13 60 13;
+#X connect 8 13 89 13;
+#X connect 8 14 23 14;
+#X connect 8 14 60 14;
+#X connect 8 14 89 14;
+#X connect 8 15 23 15;
+#X connect 8 15 60 15;
+#X connect 8 15 89 15;
+#X connect 10 0 9 0;
+#X connect 10 0 8 1;
+#X connect 13 0 20 0;
+#X connect 14 0 16 0;
+#X connect 16 0 83 0;
+#X connect 19 0 15 0;
+#X connect 19 0 8 2;
+#X connect 20 0 32 0;
+#X connect 20 0 40 0;
+#X connect 23 0 22 0;
+#X connect 23 0 24 0;
+#X connect 23 1 24 1;
+#X connect 23 1 25 0;
+#X connect 28 0 27 0;
+#X connect 29 0 30 0;
+#X connect 30 0 28 0;
+#X connect 31 0 8 0;
+#X connect 33 0 35 0;
+#X connect 33 0 41 0;
+#X connect 34 0 33 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
+#X connect 39 0 34 0;
+#X connect 40 0 19 1;
+#X connect 41 0 19 1;
+#X connect 42 0 44 0;
+#X connect 45 0 46 0;
+#X connect 46 0 47 0;
+#X connect 46 1 48 0;
+#X connect 47 0 40 1;
+#X connect 48 0 40 1;
+#X connect 49 0 52 0;
+#X connect 50 0 41 1;
+#X connect 51 0 41 1;
+#X connect 52 0 50 0;
+#X connect 52 1 51 0;
+#X connect 53 0 36 0;
+#X connect 56 0 13 0;
+#X connect 59 0 42 0;
+#X connect 60 0 7 0;
+#X connect 60 1 7 1;
+#X connect 60 2 7 2;
+#X connect 60 3 7 3;
+#X connect 60 4 7 4;
+#X connect 60 5 7 5;
+#X connect 60 6 7 6;
+#X connect 60 7 7 7;
+#X connect 60 8 7 8;
+#X connect 60 9 7 9;
+#X connect 60 10 7 10;
+#X connect 60 11 7 11;
+#X connect 60 12 7 12;
+#X connect 60 13 7 13;
+#X connect 60 14 7 14;
+#X connect 60 15 7 15;
+#X connect 60 16 7 16;
+#X connect 60 17 7 17;
+#X connect 60 18 7 18;
+#X connect 60 19 7 19;
+#X connect 61 0 62 0;
+#X connect 61 1 63 0;
+#X connect 62 0 83 1;
+#X connect 63 0 83 1;
+#X connect 64 0 86 0;
+#X connect 66 0 64 0;
+#X connect 67 0 8 0;
+#X connect 68 0 70 0;
+#X connect 68 0 75 0;
+#X connect 68 0 10 1;
+#X connect 69 0 68 0;
+#X connect 71 0 72 0;
+#X connect 72 0 73 0;
+#X connect 73 0 74 0;
+#X connect 74 0 69 0;
+#X connect 76 0 75 1;
+#X connect 77 0 75 1;
+#X connect 78 0 76 0;
+#X connect 78 1 77 0;
+#X connect 79 0 71 0;
+#X connect 81 0 14 0;
+#X connect 83 0 10 1;
+#X connect 84 0 61 0;
+#X connect 85 0 78 0;
