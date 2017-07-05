@@ -1,0 +1,4 @@
+#N canvas 0 50 450 300 10;
+#X obj 103 83 noise~;
+#X obj 85 124 circle_panner~;
+#X connect 0 0 1 0;
