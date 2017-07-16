@@ -1,0 +1,197 @@
+#N canvas 187 32 1153 626 10;
+#X obj 497 96 hsl 128 15 -180 180 0 0 empty empty azimuth -2 -8 0 10
+-262144 -1 -1 8500 1;
+#X floatatom 494 127 5 0 0 0 - - -, f 5;
+#X obj 228 96 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 228 120 metro 100;
+#X obj 228 69 loadbang;
+#X obj 775 91 hsl 128 15 0 100 0 0 empty empty spread -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 772 113 5 0 0 0 - - -, f 5;
+#X msg 50 -5 define_loudspeakers 2 0 11.25 22.5 33.75 45 56.25 67.5
+78.75 90 101.25 112.5 123.75 135 146.25 157.5 168.75 180 191.25 202.5
+213.75 225 236.25 247.5 258.75 270 281.25 292.5 303.75 315 326.25 337.5
+348.75;
+#X floatatom 1144 378 5 0 0 0 - - -, f 5;
+#X floatatom 1184 378 5 0 0 0 - - -, f 5;
+#X floatatom 1221 378 5 0 0 0 - - -, f 5;
+#X floatatom 1258 378 5 0 0 0 - - -, f 5;
+#X floatatom 1296 378 5 0 0 0 - - -, f 5;
+#X floatatom 1332 377 5 0 0 0 - - -, f 5;
+#X floatatom 1372 377 5 0 0 0 - - -, f 5;
+#X floatatom 1409 377 5 0 0 0 - - -, f 5;
+#X floatatom 1447 377 5 0 0 0 - - -, f 5;
+#X floatatom 1486 376 5 0 0 0 - - -, f 5;
+#X floatatom 1526 376 5 0 0 0 - - -, f 5;
+#X text 202 207 requires pddp and vbap externals installed via help/find
+externals;
+#X text 961 -13 vbap 32 channel panner for unityGain;
+#X text 961 4 PCC Cascade \, Music and Sonic Arts;
+#X text 961 20 Jesse Mejia 2017;
+#X text 58 49 defines a 2D array \, and a list of loudspeaker angles
+;
+#X obj 24 229 inlet~;
+#X obj 494 -16 inlet;
+#X obj 494 8 / 127;
+#X obj 494 32 * 360;
+#X obj 494 56 - 180;
+#X text 533 33 scales 0-127 to -180 - 180;
+#X obj 772 -8 inlet;
+#X obj 772 20 / 127;
+#X obj 772 44 * 100;
+#X obj 634 70 snapshot~;
+#X obj 627 -24 metro 20;
+#X obj 573 -11 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 648 109 5 0 0 0 - - -, f 5;
+#X obj 690 109 * 127;
+#X floatatom 497 182 5 0 0 0 - - -, f 5;
+#X obj 748 162 int;
+#X floatatom 754 193 5 0 0 0 - - -, f 5;
+#X obj 24 304 *~ 0.8;
+#X obj 391 136 line 0 1;
+#X obj 109 193 phasor~ 440;
+#X obj 158 376 bob~;
+#X obj 203 326 sig~;
+#X obj 203 300 mtof;
+#X obj 206 244 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4250 1;
+#X obj 154 161 osc~ 700;
+#X obj 63 160 phasor~ 500;
+#X obj 809 376 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 803 224 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 800 254 metro 100;
+#X msg 496 156 \$1 20;
+#X obj 640 8 phasor~ 0.1;
+#X msg 273 334 2;
+#X obj 262 429 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4250 1;
+#X obj 266 407 line;
+#X msg 285 384 \$1 \, 0 200;
+#X obj 535 272 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 532 329 random 4;
+#X obj 525 355 select 0 1 2 3;
+#X obj 533 302 metro 200;
+#X msg 573 416 -150;
+#X msg 411 480 51;
+#X msg 465 478 85;
+#X msg 512 482 124;
+#X obj 646 368 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5100 1;
+#X obj 673 368 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8500 1;
+#X obj 708 367 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 12400 1;
+#X msg 642 514 set \$1;
+#X msg 679 536 set \$1;
+#X msg 712 510 set \$1;
+#X obj 799 282 random 4;
+#X msg 807 330 45;
+#X msg 909 330 108;
+#X msg 858 331 18;
+#X obj 800 305 select 0 1 2 3;
+#X obj 300 309 clone channel_output~ 32;
+#X obj 251 476 / 127;
+#X obj 133 475 dac~;
+#X obj 266 517 / 3;
+#X obj 293 189 vbap 0 0 30;
+#X obj 157 405 *~ 0.2;
+#X obj 154 233 noise~;
+#X obj 411 512 mtof;
+#X obj 645 281 metro 5000;
+#X obj 648 239 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 626 308 random 127;
+#X obj 652 332 random 127;
+#X obj 695 310 random 127;
+#X connect 0 0 1 0;
+#X connect 1 0 53 0;
+#X connect 2 0 3 0;
+#X connect 3 0 82 0;
+#X connect 4 0 2 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 39 0;
+#X connect 7 0 82 0;
+#X connect 24 0 41 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 0 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
+#X connect 32 0 5 0;
+#X connect 33 0 36 0;
+#X connect 33 0 37 0;
+#X connect 34 0 33 0;
+#X connect 35 0 34 0;
+#X connect 37 0 26 0;
+#X connect 39 0 40 0;
+#X connect 39 0 82 3;
+#X connect 42 0 82 1;
+#X connect 43 0 44 0;
+#X connect 44 0 83 0;
+#X connect 45 0 44 1;
+#X connect 46 0 45 0;
+#X connect 47 0 46 0;
+#X connect 48 0 44 0;
+#X connect 49 0 44 0;
+#X connect 51 0 52 0;
+#X connect 52 0 73 0;
+#X connect 53 0 38 0;
+#X connect 53 0 42 0;
+#X connect 54 0 33 0;
+#X connect 55 0 44 2;
+#X connect 56 0 79 0;
+#X connect 56 0 47 0;
+#X connect 57 0 56 0;
+#X connect 58 0 57 0;
+#X connect 59 0 62 0;
+#X connect 60 0 61 0;
+#X connect 61 0 64 0;
+#X connect 61 1 65 0;
+#X connect 61 2 66 0;
+#X connect 62 0 60 0;
+#X connect 63 0 58 0;
+#X connect 63 0 0 0;
+#X connect 64 0 58 0;
+#X connect 64 0 26 0;
+#X connect 64 0 85 0;
+#X connect 65 0 58 0;
+#X connect 65 0 26 0;
+#X connect 65 0 85 0;
+#X connect 66 0 58 0;
+#X connect 66 0 26 0;
+#X connect 66 0 85 0;
+#X connect 67 0 70 0;
+#X connect 68 0 71 0;
+#X connect 69 0 72 0;
+#X connect 70 0 64 0;
+#X connect 71 0 65 0;
+#X connect 72 0 66 0;
+#X connect 73 0 77 0;
+#X connect 74 0 50 0;
+#X connect 75 0 50 0;
+#X connect 76 0 50 0;
+#X connect 77 0 74 0;
+#X connect 77 1 75 0;
+#X connect 77 2 76 0;
+#X connect 79 0 81 0;
+#X connect 81 0 83 1;
+#X connect 82 0 78 1;
+#X connect 83 0 78 0;
+#X connect 84 0 44 0;
+#X connect 85 0 49 0;
+#X connect 85 0 48 0;
+#X connect 85 0 43 0;
+#X connect 86 0 88 0;
+#X connect 86 0 89 0;
+#X connect 86 0 90 0;
+#X connect 87 0 86 0;
+#X connect 88 0 67 0;
+#X connect 89 0 68 0;
+#X connect 90 0 69 0;
