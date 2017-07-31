@@ -1,9 +1,9 @@
 #N canvas 176 48 1153 626 10;
 #X obj 497 96 hsl 128 15 -180 180 0 0 empty empty azimuth -2 -8 0 10
--262144 -1 -1 6600 1;
+-262144 -1 -1 2000 1;
 #X floatatom 542 124 5 0 0 0 - - -, f 5;
 #X obj 775 91 hsl 128 15 0 100 0 0 empty empty spread -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 786 1;
 #X floatatom 772 113 5 0 0 0 - - -, f 5;
 #X msg 50 -5 define_loudspeakers 2 0 11.25 22.5 33.75 45 56.25 67.5
 78.75 90 101.25 112.5 123.75 135 146.25 157.5 168.75 180 191.25 202.5
@@ -22,7 +22,6 @@
 #X obj 748 162 int;
 #X floatatom 754 193 5 0 0 0 - - -, f 5;
 #X obj 26 70 inlet~;
-#X obj 494 8 scale 0 127 -180 180;
 #X obj 306 94 t b b;
 #X obj 306 71 r start;
 #X msg 307 126 1;
@@ -37,29 +36,32 @@
 #X obj 300 355 clone channel_output~ 32;
 #X text 202 207 requires vbap externals installed via help/find externals
 ;
+#X obj 494 7 scale 0 127 -180 180;
+#X obj 493 167 int;
 #X connect 0 0 1 0;
-#X connect 0 0 27 0;
+#X connect 0 0 26 0;
 #X connect 2 0 3 0;
 #X connect 3 0 14 0;
-#X connect 4 0 26 0;
-#X connect 9 0 17 0;
+#X connect 4 0 25 0;
+#X connect 9 0 30 0;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
 #X connect 12 0 2 0;
 #X connect 14 0 15 0;
-#X connect 14 0 26 3;
-#X connect 16 0 21 0;
-#X connect 17 0 0 0;
-#X connect 18 0 20 0;
-#X connect 18 1 4 0;
-#X connect 19 0 18 0;
-#X connect 20 0 24 1;
-#X connect 21 0 29 0;
-#X connect 22 0 0 0;
-#X connect 23 0 24 0;
-#X connect 24 0 26 0;
-#X connect 25 0 13 0;
-#X connect 25 0 26 1;
-#X connect 26 0 29 1;
-#X connect 27 0 25 0;
-#X connect 28 0 0 0;
+#X connect 14 0 25 3;
+#X connect 16 0 20 0;
+#X connect 17 0 19 0;
+#X connect 17 1 4 0;
+#X connect 18 0 17 0;
+#X connect 19 0 23 1;
+#X connect 20 0 28 0;
+#X connect 21 0 0 0;
+#X connect 22 0 23 0;
+#X connect 23 0 25 0;
+#X connect 24 0 13 0;
+#X connect 24 0 25 1;
+#X connect 25 0 28 1;
+#X connect 26 0 31 0;
+#X connect 27 0 0 0;
+#X connect 30 0 0 0;
+#X connect 31 0 24 0;

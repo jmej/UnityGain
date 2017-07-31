@@ -1,16 +1,16 @@
 #N canvas 88 56 1140 552 10;
 #X obj 223 413 circle_panner~, f 25;
 #X obj 350 348 hsl 128 15 0 127 0 0 empty empty azimuth -2 -8 0 10
--262144 -1 -1 10500 1;
+-262144 -1 -1 300 1;
 #X obj 506 347 hsl 128 15 0 127 0 0 empty empty spread -2 -8 0 10 -262144
--1 -1 5361 1;
+-1 -1 786 1;
 #X obj 7 105 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 22 256;
+-262144 -1 -1 3 256;
 #X obj 114 171 scale 0 127 127 0;
 #X obj 114 201 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 105 256;
+-262144 -1 -1 124 256;
 #X obj 337 153 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 83 256;
+-262144 -1 -1 118 256;
 #X obj 336 89 metro 1000;
 #X obj 336 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
@@ -31,10 +31,10 @@
 #X obj 390 202 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 122 251 spigot;
-#X obj 154 221 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 154 221 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 42 156 spigot;
-#X obj 74 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 74 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 419 295 spigot;
 #X obj 450 267 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
